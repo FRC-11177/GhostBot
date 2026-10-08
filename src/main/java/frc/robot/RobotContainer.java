@@ -4,11 +4,23 @@
 
 package frc.robot;
 
+import edu.wpi.first.math.kinematics.ChassisSpeeds;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
+import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
+import frc.robot.Drivetrain.Constants;
+import frc.robot.Drivetrain.Drivetrain;
 
 public class RobotContainer {
+  public Drivetrain drivetrain = Drivetrain.getInstance();
+  public CommandXboxController controller = new CommandXboxController(0);
+
   public RobotContainer() {
+    drivetrain.setDefaultCommand(drivetrain.drive(() -> new ChassisSpeeds(
+      Constants.MaxDriveVelocity.times(controller.getLeftX()),
+      Constants.MaxDriveVelocity.times(controller.getLeftY()),
+      Constants.MaxOmega.times(controller.getRightX())
+    )));
     configureBindings();
   }
 

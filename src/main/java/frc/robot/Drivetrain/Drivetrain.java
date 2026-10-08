@@ -22,6 +22,7 @@ import com.revrobotics.spark.SparkLowLevel.MotorType;
 import com.revrobotics.spark.config.SparkMaxConfig;
 import com.revrobotics.spark.config.SparkBaseConfig.IdleMode;
 import com.studica.frc.AHRS;
+import com.studica.frc.AHRS.NavXComType;
 
 import dev.doglog.DogLog;
 import edu.wpi.first.math.controller.PIDController;
@@ -63,6 +64,7 @@ public class Drivetrain implements Subsystem{
         LeftPID = FrontLeftMotor.getClosedLoopController();
         RightPID = FrontRightMotor.getClosedLoopController();
 
+        gyro = new AHRS(NavXComType.kMXP_SPI);
         PoseEstimator = new DifferentialDrivePoseEstimator3d(Constants.kinematics, gyro.getRotation3d(), getPositions().leftMeters, getPositions().rightMeters, Constants.StartingPositon);
         vision = Vision.getInstance();
         HeadingPID = new PIDController(0, 0, 0);

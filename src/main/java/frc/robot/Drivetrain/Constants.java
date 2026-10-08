@@ -5,6 +5,7 @@ import static edu.wpi.first.units.Units.MetersPerSecond;
 import static edu.wpi.first.units.Units.MetersPerSecondPerSecond;
 import static edu.wpi.first.units.Units.RadiansPerSecond;
 import static edu.wpi.first.units.Units.RadiansPerSecondPerSecond;
+import static edu.wpi.first.units.Units.RotationsPerSecond;
 import static edu.wpi.first.units.Units.Seconds;
 
 import com.pathplanner.lib.path.PathConstraints;
@@ -15,6 +16,7 @@ import com.revrobotics.spark.config.MAXMotionConfig;
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Pose3d;
 import edu.wpi.first.math.kinematics.DifferentialDriveKinematics;
+import edu.wpi.first.units.measure.AngularVelocity;
 import edu.wpi.first.units.measure.Distance;
 import edu.wpi.first.units.measure.LinearVelocity;
 
@@ -33,6 +35,7 @@ public class Constants {
     public static final Distance WheelCirc = WheelRadius.times(2).times(Math.PI);
     public static final LinearVelocity MaxDriveVelocity = MetersPerSecond.of(4);
     public static final LinearVelocity TrueMaxVelocity = WheelCirc.per(Seconds).times(5676/60);
+    public static final AngularVelocity MaxOmega = RotationsPerSecond.of(4.5);
 
     public static final PathConstraints AutoConstaints = new PathConstraints(TrueMaxVelocity, MetersPerSecondPerSecond.of(9.8), RadiansPerSecond.of(3), RadiansPerSecondPerSecond.of(27));
 
