@@ -1,7 +1,6 @@
 package frc.robot.Intake;
 
 import static edu.wpi.first.units.Units.Meters;
-import static edu.wpi.first.units.Units.MetersPerSecond;
 import static edu.wpi.first.units.Units.Second;
 
 import com.revrobotics.PersistMode;

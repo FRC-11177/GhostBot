@@ -1,9 +1,7 @@
 package frc.robot.Shooter;
 
-import static edu.wpi.first.units.Units.Centimeter;
 import static edu.wpi.first.units.Units.Centimeters;
 
-import com.ctre.phoenix6.swerve.utility.WheelForceCalculator.Feedforwards;
 import com.revrobotics.spark.FeedbackSensor;
 import com.revrobotics.spark.config.ClosedLoopConfig;
 import com.revrobotics.spark.config.FeedForwardConfig;

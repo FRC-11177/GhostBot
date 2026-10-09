@@ -1,6 +1,5 @@
 package frc.robot.Intake;
 
-import static edu.wpi.first.units.Units.Centimeters;
 import static edu.wpi.first.units.Units.Inches;
 
 import com.revrobotics.spark.FeedbackSensor;
