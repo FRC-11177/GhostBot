@@ -69,6 +69,11 @@ public class Drivetrain implements Subsystem{
         vision = Vision.getInstance();
         HeadingPID = new PIDController(0, 0, 0);
 
+        FrontLeftConfig = new SparkMaxConfig();
+        BackLeftConfig = new SparkMaxConfig();
+        FrontRightConfig = new SparkMaxConfig();
+        BackRightConfig = new SparkMaxConfig();
+
         FrontLeftConfig
             .idleMode(IdleMode.kBrake)
             .inverted(false)
